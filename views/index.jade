@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title Express HTML
+    link(rel='stylesheet', type='text/css', href='node_modules/bootstrap/dist/css/bootstrap.css')
+  body
+  script(src='http://localhost:8080/webpack-dev-server.js')
+  nav.navbar.navbar-inverse.navbar-static-top
+      .container
+        a.navbar-brand.active(href='') Express HTML
+        ul.nav.navbar-nav
+          li
+            a(href='home') Home
+          li
+            a(href='nested-animations') Nested Animations
+          li.dropdown
+            a.dropdown-toggle(data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+              | DataTables 
+              span.caret
+            ul.dropdown-menu
+              li
+                a(href='datatable') DataTable1
+              li
+                a(href='datatable2') DataTable2
+              li
+                a(href='datatable3') DataTable3
+    #test1
+    hr
+    #test2
+
+    script(type='text/javascript', src='build/bundle.js', charset='utf-8')
+   
