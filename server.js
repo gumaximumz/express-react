@@ -6,7 +6,8 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
  
 // ตั้งค่าให้ Express ใช้ View Engine ชื่อว่า Jade
-app.set('view engine', 'jade');
+//app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/'));
@@ -18,15 +19,12 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 }));
 
 app.get('/', getIndex);
-app.get('/home', getHomePage);
 
 function getIndex(req, res) {
-    res.render('index.jade');
+    res.render('index.html');
+    //res.render('index.jade');
 }
 
-function getHomePage(req, res) {
-    res.render('home.jade');
-}
 
 var server = app.listen(7777, function () {
     var port = server.address().port;

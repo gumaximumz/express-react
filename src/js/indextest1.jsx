@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+//import Jade from'react-jade';
 
 class App extends React.Component {
     constructor() {
@@ -25,6 +26,4 @@ class App extends React.Component {
     }
 }
 
-ReactDOM.render(<App />,
-    document.getElementById('test1')
-);
+module.exports = App;
