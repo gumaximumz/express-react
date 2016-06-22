@@ -1,7 +1,7 @@
 var express = require('express');
 var path = require('path');
 var app = express();
-
+var userService = require('./services/userservice');
 // ประกาศให้ Express ใช้งาน View โดยให้ใช้โฟลเดอร์ views เป็นตัวเก็บไฟล์ jade.
 app.set('views', path.join(__dirname, 'views'));
  
@@ -25,6 +25,25 @@ function getIndex(req, res) {
     //res.render('index.jade');
 }
 
+app.get('/users', function (req, res) {
+    res.json(userService.findAll());
+});
+
+app.post('/userserver', function (req, res) {
+    var data = userService.gets(req.query);
+    res.json(data);
+});
+
+app.get('/userserver', function (req, res) {
+    console.log(req);
+    var data = userService.gets(req.query);
+    res.json(data);
+});
+
+app.get('/user/:id', function (req, res) {
+    var id = req.params.id;
+    res.json(userService.findById(id));
+});
 
 var server = app.listen(7777, function () {
     var port = server.address().port;

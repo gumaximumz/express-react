@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 //import Jade from'react-jade';
 
-class App extends React.Component {
+class TestUpdateText extends React.Component {
     constructor() {
         super();
         this.state = {
             text: 'Hello, Navtech!'
         }
     }
-
+    
     updateText(event) {
         this.setState({
             text: event.target.value
@@ -26,4 +26,4 @@ class App extends React.Component {
     }
 }
 
-module.exports = App;
+module.exports = TestUpdateText;
