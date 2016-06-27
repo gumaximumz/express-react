@@ -9,12 +9,6 @@ import 'datatables.net-bs/css/dataTables.bootstrap.css';
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 
-$.extend(true, $.fn.dataTable.defaults, {
-  //language: {
-  //url: require('../lib/zh_cn.json')
-  //}
-});
-
 
 class Datatables extends React.Component {
   constructor() {

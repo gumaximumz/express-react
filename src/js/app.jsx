@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import { browserHistory, Router, Route, Link } from 'react-router'
 import TestUpdateText from './updatetexts/updatetext.jsx'
-import UserDatetables from './users/dt.jsx'
+import Users from './users/index.jsx'
 import '../css/app.css'
 
 const Menu = ({ children, location: { pathname } }) => {
@@ -20,14 +20,15 @@ const Menu = ({ children, location: { pathname } }) => {
                     </ul>
                 </div>
             </nav>
+            <div class="form-horizontal">
+                <ReactCSSTransitionGroup
+                    component="div" transitionName="swap" className="container body-content form-control-static"
+                    transitionEnterTimeout={500} transitionLeaveTimeout={500}
+                    >
 
-            <ReactCSSTransitionGroup
-                component="div" transitionName="swap" className="container body-content form-control-static"
-                transitionEnterTimeout={500} transitionLeaveTimeout={500}
-                >
-
-                {React.cloneElement(children || <div />, { key: key }) }
-            </ReactCSSTransitionGroup>
+                    {React.cloneElement(children || <div />, { key: key }) }
+                </ReactCSSTransitionGroup>
+            </div>
         </div>
     )
 }
@@ -67,7 +68,7 @@ const Tab2 = () => (
 )
 
 const UpdateText = TestUpdateText;
-const DataTable = UserDatetables;
+const DataTable = Users;
 
 render((
     <Router history={browserHistory}>
