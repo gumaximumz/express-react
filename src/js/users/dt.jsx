@@ -22,7 +22,6 @@ class Datatables extends React.Component {
     let me = this;
     return (
       <div>
-        <strong>User</strong>
         <table className="table table-striped" ref={elem =>
           $(elem).DataTable({
             processing: true,

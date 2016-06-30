@@ -80,6 +80,7 @@ render((
             <Route path="updateText" component={UpdateText}>
             </Route>
             <Route path="datatable" component={DataTable}>
+                <Route path="create" component={Tab1} />
             </Route>
         </Route>
     </Router>

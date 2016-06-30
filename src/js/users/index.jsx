@@ -1,4 +1,4 @@
-import $ from 'jquery';
+
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 import DtUser from './dt.jsx'
@@ -27,9 +27,9 @@ class index extends React.Component {
                     <h4>Users list</h4>
                 </div>
                 <div class="col-md-6 col-xs-6 text-right">
-                    <a href="/Employee/Create" class="btn btn-success">
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                    </a>
+                  <a to="/datatable/create" class="btn btn-success">
+                     <button type="button" class="glyphicon glyphicon-plus" ></button>
+                </a>
                 </div>
             </div>
             </div>

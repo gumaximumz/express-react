@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b850ef77f74fcad62856"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b700a0b695e4f1f3e05c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -709,11 +709,11 @@
 
 	var _updatetext2 = _interopRequireDefault(_updatetext);
 
-	var _index = __webpack_require__(254);
+	var _index = __webpack_require__(240);
 
 	var _index2 = _interopRequireDefault(_index);
 
-	__webpack_require__(248);
+	__webpack_require__(250);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -881,12 +881,16 @@
 	            _react2.default.createElement(_reactRouter.Route, { path: 'tab2', component: Tab2 })
 	        ),
 	        _react2.default.createElement(_reactRouter.Route, { path: 'updateText', component: UpdateText }),
-	        _react2.default.createElement(_reactRouter.Route, { path: 'datatable', component: DataTable })
+	        _react2.default.createElement(
+	            _reactRouter.Route,
+	            { path: 'datatable', component: DataTable },
+	            _react2.default.createElement(_reactRouter.Route, { path: 'create', component: Tab1 })
+	        )
 	    )
 	), document.getElementById('app'));
 
 	if (true) {
-	    __webpack_require__(250).RootInstanceProvider.injectProvider({
+	    __webpack_require__(252).RootInstanceProvider.injectProvider({
 	        getRootInstances: function getRootInstances() {
 	            return [rootInstance];
 	        }
@@ -27534,15 +27538,122 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _jquery = __webpack_require__(241);
+	var _react = __webpack_require__(4);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(41);
+
+	var _dt = __webpack_require__(241);
+
+	var _dt2 = _interopRequireDefault(_dt);
+
+	var _search = __webpack_require__(249);
+
+	var _search2 = _interopRequireDefault(_search);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var index = function (_React$Component) {
+	  _inherits(index, _React$Component);
+
+	  function index() {
+	    _classCallCheck(this, index);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(index).call(this));
+	  }
+
+	  _createClass(index, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'header',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'panel panel-default' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'panel-heading' },
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              'Search users'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'panel-body' },
+	            _react2.default.createElement(_search2.default, null)
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'panel panel-default' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'panel-heading' },
+	            _react2.default.createElement(
+	              'div',
+	              { 'class': 'row' },
+	              _react2.default.createElement(
+	                'div',
+	                { 'class': 'col-md-6 col-xs-6' },
+	                _react2.default.createElement(
+	                  'h4',
+	                  null,
+	                  'Users list'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { 'class': 'col-md-6 col-xs-6 text-right' },
+	                _react2.default.createElement(
+	                  'a',
+	                  { to: '/datatable/create', 'class': 'btn btn-success' },
+	                  _react2.default.createElement('button', { type: 'button', 'class': 'glyphicon glyphicon-plus' })
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'panel-body' },
+	            _react2.default.createElement(_dt2.default, null)
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return index;
+	}(_react2.default.Component);
+
+	module.exports = index;
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _jquery = __webpack_require__(242);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
-
-	__webpack_require__(242);
 
 	__webpack_require__(243);
 
 	__webpack_require__(244);
+
+	__webpack_require__(245);
 
 	var _react = __webpack_require__(4);
 
@@ -27583,11 +27694,6 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(
-	          'strong',
-	          null,
-	          'User'
-	        ),
 	        _react2.default.createElement('table', { className: 'table table-striped', ref: function ref(elem) {
 	            return (0, _jquery2.default)(elem).DataTable({
 	              processing: true,
@@ -27618,7 +27724,7 @@
 	module.exports = Datatables;
 
 /***/ },
-/* 241 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -37661,7 +37767,7 @@
 
 
 /***/ },
-/* 242 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables 1.10.12
@@ -37695,7 +37801,7 @@
 
 		if ( true ) {
 			// AMD
-			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(241)], __WEBPACK_AMD_DEFINE_RESULT__ = function ( $ ) {
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(242)], __WEBPACK_AMD_DEFINE_RESULT__ = function ( $ ) {
 				return factory( $, window, document );
 			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 		}
@@ -52944,7 +53050,7 @@
 
 
 /***/ },
-/* 243 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables Bootstrap 3 integration
@@ -52962,7 +53068,7 @@
 	(function( factory ){
 		if ( true ) {
 			// AMD
-			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(241), __webpack_require__(242)], __WEBPACK_AMD_DEFINE_RESULT__ = function ( $ ) {
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(242), __webpack_require__(243)], __WEBPACK_AMD_DEFINE_RESULT__ = function ( $ ) {
 				return factory( $, window, document );
 			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 		}
@@ -53131,23 +53237,23 @@
 	}));
 
 /***/ },
-/* 244 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(245);
+	var content = __webpack_require__(246);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(247)(content, {});
+	var update = __webpack_require__(248)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(true) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept(245, function() {
-				var newContent = __webpack_require__(245);
+			module.hot.accept(246, function() {
+				var newContent = __webpack_require__(246);
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -53157,10 +53263,10 @@
 	}
 
 /***/ },
-/* 245 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(246)();
+	exports = module.exports = __webpack_require__(247)();
 	// imports
 
 
@@ -53171,7 +53277,7 @@
 
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports) {
 
 	/*
@@ -53227,7 +53333,7 @@
 
 
 /***/ },
-/* 247 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -53479,23 +53585,131 @@
 
 
 /***/ },
-/* 248 */
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(4);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(41);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Search = function (_React$Component) {
+	    _inherits(Search, _React$Component);
+
+	    function Search() {
+	        _classCallCheck(this, Search);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Search).call(this));
+	    }
+
+	    _createClass(Search, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'row' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'col-md-6' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'form-group' },
+	                            _react2.default.createElement(
+	                                'label',
+	                                { className: 'control-label col-md-4' },
+	                                'Name'
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'col-md-8' },
+	                                _react2.default.createElement('input', { className: 'form-control text-box single-line', id: 'Name', name: 'Name' })
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'col-md-6' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'form-group' },
+	                            _react2.default.createElement(
+	                                'label',
+	                                { className: 'control-label col-md-4' },
+	                                'Username'
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'col-md-8' },
+	                                _react2.default.createElement('input', { className: 'form-control text-box single-line', id: 'Username', name: 'Username' })
+	                            )
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'row' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'col-md-6 col-xs-6 text-right' },
+	                        _react2.default.createElement(
+	                            'button',
+	                            { type: 'button', id: 'btn_search', 'class': 'btn btn-success' },
+	                            'Search'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'col-md-6 col-xs-6' },
+	                        _react2.default.createElement(
+	                            'button',
+	                            { type: 'button', 'class': 'btn btn-link' },
+	                            'Reset'
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Search;
+	}(_react2.default.Component);
+
+	module.exports = Search;
+
+/***/ },
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(249);
+	var content = __webpack_require__(251);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(247)(content, {});
+	var update = __webpack_require__(248)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(true) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept(249, function() {
-				var newContent = __webpack_require__(249);
+			module.hot.accept(251, function() {
+				var newContent = __webpack_require__(251);
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -53505,10 +53719,10 @@
 	}
 
 /***/ },
-/* 249 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(246)();
+	exports = module.exports = __webpack_require__(247)();
 	// imports
 
 
@@ -53519,24 +53733,24 @@
 
 
 /***/ },
-/* 250 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var RootInstanceProvider = __webpack_require__(251);
+	var RootInstanceProvider = __webpack_require__(253);
 
 	module.exports = {
 	  RootInstanceProvider: RootInstanceProvider.injection
 	};
 
 /***/ },
-/* 251 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var getRootInstancesFromReactMount = __webpack_require__(252);
+	var getRootInstancesFromReactMount = __webpack_require__(254);
 
 	var injectedProvider = null,
 	    didWarn = false;
@@ -53577,7 +53791,7 @@
 	module.exports = RootInstanceProvider;
 
 /***/ },
-/* 252 */
+/* 254 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -53587,204 +53801,6 @@
 	}
 
 	module.exports = getRootInstancesFromReactMount;
-
-/***/ },
-/* 253 */,
-/* 254 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _jquery = __webpack_require__(241);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	var _react = __webpack_require__(4);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(41);
-
-	var _dt = __webpack_require__(240);
-
-	var _dt2 = _interopRequireDefault(_dt);
-
-	var _search = __webpack_require__(255);
-
-	var _search2 = _interopRequireDefault(_search);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var index = function (_React$Component) {
-	    _inherits(index, _React$Component);
-
-	    function index() {
-	        _classCallCheck(this, index);
-
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(index).call(this));
-	    }
-
-	    _createClass(index, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'header',
-	                null,
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'panel panel-default' },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'panel-heading' },
-	                        _react2.default.createElement(
-	                            'h4',
-	                            null,
-	                            'Search users'
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'panel-body' },
-	                        _react2.default.createElement(_search2.default, null)
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'panel panel-default' },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'panel-heading' },
-	                        _react2.default.createElement(
-	                            'div',
-	                            { 'class': 'row' },
-	                            _react2.default.createElement(
-	                                'div',
-	                                { 'class': 'col-md-6 col-xs-6' },
-	                                _react2.default.createElement(
-	                                    'h4',
-	                                    null,
-	                                    'Users list'
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                'div',
-	                                { 'class': 'col-md-6 col-xs-6 text-right' },
-	                                _react2.default.createElement(
-	                                    'a',
-	                                    { href: '/Employee/Create', 'class': 'btn btn-success' },
-	                                    _react2.default.createElement('span', { 'class': 'glyphicon glyphicon-plus', 'aria-hidden': 'true' })
-	                                )
-	                            )
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'panel-body' },
-	                        _react2.default.createElement(_dt2.default, null)
-	                    )
-	                )
-	            );
-	        }
-	    }]);
-
-	    return index;
-	}(_react2.default.Component);
-
-	module.exports = index;
-
-/***/ },
-/* 255 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _jquery = __webpack_require__(241);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	var _react = __webpack_require__(4);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(41);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Search = function (_React$Component) {
-	    _inherits(Search, _React$Component);
-
-	    function Search() {
-	        _classCallCheck(this, Search);
-
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Search).call(this));
-	    }
-
-	    _createClass(Search, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'row' },
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'col-md-6' },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'form-group' },
-	                        _react2.default.createElement(
-	                            'label',
-	                            { className: 'control-label col-md-4' },
-	                            'Name'
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'col-md-8' },
-	                            _react2.default.createElement('input', { className: 'form-control text-box single-line', id: 'Name', name: 'Name' })
-	                        )
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'col-md-6' },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'form-group' },
-	                        _react2.default.createElement(
-	                            'label',
-	                            { className: 'control-label col-md-4' },
-	                            'Username'
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'col-md-8' },
-	                            _react2.default.createElement('input', { className: 'form-control text-box single-line', id: 'Username', name: 'Username' })
-	                        )
-	                    )
-	                )
-	            );
-	        }
-	    }]);
-
-	    return Search;
-	}(_react2.default.Component);
-
-	module.exports = Search;
 
 /***/ }
 /******/ ]);
