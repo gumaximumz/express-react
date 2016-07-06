@@ -3,7 +3,8 @@ import { render } from 'react-dom'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import { browserHistory, Router, Route, Link } from 'react-router'
 import TestUpdateText from './updatetexts/updatetext.jsx'
-import Users from './users/index.jsx'
+import UserIndex from './users/index.jsx'
+import UserCreate from './users/create.jsx'
 import '../css/app.css'
 
 const Menu = ({ children, location: { pathname } }) => {
@@ -16,7 +17,7 @@ const Menu = ({ children, location: { pathname } }) => {
                     <ul className="nav navbar-nav">
                         <li><Link to="/hello">Hello</Link></li>
                         <li><Link to="/updateText">Update Text</Link></li>
-                        <li><Link to="/datatable">Datatable</Link></li>
+                        <li><Link to="/user/index">Users</Link></li>
                     </ul>
                 </div>
             </nav>
@@ -67,8 +68,24 @@ const Tab2 = () => (
     </div>
 )
 
-const UpdateText = TestUpdateText;
-const DataTable = Users;
+const Users = ({ children, location: { pathname } }) => {
+    const key = pathname.split('/user')[1] || 'root'
+    return (
+        <div>
+            <h1>Users</h1>
+            <ReactCSSTransitionGroup
+                component="div" transitionName="example"
+                transitionEnterTimeout={500} transitionLeaveTimeout={500}
+                >
+                {React.cloneElement(children || <div/>, { key: pathname }) }
+            </ReactCSSTransitionGroup>
+        </div>
+    )
+}
+
+
+
+
 
 render((
     <Router history={browserHistory}>
@@ -77,10 +94,11 @@ render((
                 <Route path="tab1" component={Tab1} />
                 <Route path="tab2" component={Tab2} />
             </Route>
-            <Route path="updateText" component={UpdateText}>
+            <Route path="updateText" component={TestUpdateText}>
             </Route>
-            <Route path="datatable" component={DataTable}>
-                <Route path="create" component={Tab1} />
+            <Route path="user" component={Users}>
+                <Route path="index" component={UserIndex} />
+                <Route path="create" component={UserCreate} />
             </Route>
         </Route>
     </Router>

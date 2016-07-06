@@ -1,11 +1,7 @@
 import $ from 'jquery';
 import 'datatables.net';
-
 import 'datatables.net-bs/js/dataTables.bootstrap';
 import 'datatables.net-bs/css/dataTables.bootstrap.css';
-//import zh_cn from '../lib/zh_cn.json';
-//import 'datatables.net-fixedheader';
-//import 'datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.css';
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 
