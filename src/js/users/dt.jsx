@@ -4,13 +4,18 @@ import 'datatables.net-bs/js/dataTables.bootstrap';
 import 'datatables.net-bs/css/dataTables.bootstrap.css';
 import React, {Component} from 'react';
 import {render} from 'react-dom';
+import { browserHistory, Router, Route, Link } from 'react-router'
 
 
 class Datatables extends React.Component {
   constructor() {
     super();
-    this.getUrl = 'http://localhost:7777/userserver';
+    this.getUrl = '/userserver';
   }
+
+  editFormat(id) {
+        return '<Link to="/user/create">Create</Link>'
+    }
 
   render() {
     let elem = document.createElement('div');
@@ -39,7 +44,16 @@ class Datatables extends React.Component {
               {
                 data: 'position',
                 title: 'Position'
-              }]
+              },
+              {
+                data: 'Id',
+                render:  (data, type, row) => {
+                  console.log('Id:'+row.id);
+                  return me.editFormat(row.id);
+                },
+                orderable: false,
+              },
+            ]
           }) }>
 
         </table>

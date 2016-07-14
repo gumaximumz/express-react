@@ -5,6 +5,7 @@ import { browserHistory, Router, Route, Link } from 'react-router'
 import TestUpdateText from './updatetexts/updatetext.jsx'
 import UserIndex from './users/index.jsx'
 import UserCreate from './users/create.jsx'
+import UserEdit from './users/edit.jsx'
 import '../css/app.css'
 
 const Menu = ({ children, location: { pathname } }) => {
@@ -83,10 +84,6 @@ const Users = ({ children, location: { pathname } }) => {
     )
 }
 
-
-
-
-
 render((
     <Router history={browserHistory}>
         <Route path="/" component={Menu}>
@@ -99,6 +96,7 @@ render((
             <Route path="user" component={Users}>
                 <Route path="index" component={UserIndex} />
                 <Route path="create" component={UserCreate} />
+                <Route path="edit/:id" component={UserEdit} />
             </Route>
         </Route>
     </Router>

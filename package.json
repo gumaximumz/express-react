@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --content-base build/ --hot"
+    "dev": "webpack-dev-server --content-base build/ --hot",
+    "postinstall": "typings install"
   },
   "repository": {
     "type": "git",

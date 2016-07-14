@@ -1,0 +1,29 @@
+2016/07/12-11:24:25.124 13220 Reusing MANIFEST d:\Demo_Project\express-react\.vscode\chrome\Default\Session Storage/MANIFEST-000001
+2016/07/12-11:24:25.125 13220 Recovering log #11
+2016/07/12-11:24:25.126 13220 Level-0 table #13: started
+2016/07/12-11:24:25.212 13220 Level-0 table #13: 67536 bytes OK
+2016/07/12-11:24:25.271 13220 Delete type=0 #11
+2016/07/12-11:27:05.768 7476 Level-0 table #16: started
+2016/07/12-11:27:05.860 7476 Level-0 table #16: 152350 bytes OK
+2016/07/12-11:27:05.889 7476 Delete type=0 #14
+2016/07/12-11:27:05.923 7476 Moved #7 to level-1 62297 bytes OK: files[ 3 1 1 0 0 0 0 ]
+2016/07/12-11:28:05.782 7476 Level-0 table #18: started
+2016/07/12-11:28:05.858 7476 Level-0 table #18: 113970 bytes OK
+2016/07/12-11:28:05.882 7476 Delete type=0 #15
+2016/07/12-11:28:05.883 7476 Compacting 4@0 + 0@1 files
+2016/07/12-11:28:05.974 7476 Generated table #19@0: 250 keys, 332623 bytes
+2016/07/12-11:28:05.974 7476 Compacted 4@0 + 0@1 files => 332623 bytes
+2016/07/12-11:28:05.998 7476 compacted to: files[ 0 2 1 0 0 0 0 ]
+2016/07/12-11:28:05.998 7476 Delete type=2 #10
+2016/07/12-11:28:05.999 7476 Delete type=2 #13
+2016/07/12-11:28:05.999 7476 Delete type=2 #16
+2016/07/12-11:28:05.999 7476 Delete type=2 #18
+2016/07/12-11:29:21.435 7476 Level-0 table #21: started
+2016/07/12-11:29:21.518 7476 Level-0 table #21: 59941 bytes OK
+2016/07/12-11:29:21.562 7476 Delete type=0 #17
+2016/07/12-11:29:25.987 7476 Level-0 table #23: started
+2016/07/12-11:29:26.032 7476 Level-0 table #23: 52633 bytes OK
+2016/07/12-11:29:26.057 7476 Delete type=0 #20
+2016/07/12-11:31:56.428 7476 Level-0 table #25: started
+2016/07/12-11:31:56.487 7476 Level-0 table #25: 61802 bytes OK
+2016/07/12-11:31:56.514 7476 Delete type=0 #22

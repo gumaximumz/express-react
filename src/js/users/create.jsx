@@ -4,9 +4,21 @@ import {render} from 'react-dom';
 import { browserHistory, Router, Route, Link } from 'react-router'
 import FormPartial from './form-partial.jsx'
 
-class index extends React.Component {
+class Create extends React.Component {
     constructor() {
         super();
+        var me = this;
+        this.state = {
+            id: '',
+            name: '',
+            username: '',
+            position: ''
+        }
+        this.createUrl = '/edit';
+        this.data={
+            state: me.state,
+            url: me.createUrl
+        }
     }
 
     render() {
@@ -17,7 +29,7 @@ class index extends React.Component {
                         <h4>Create users</h4>
                     </div>
                     <div className="panel-body">
-                    <FormPartial />
+                    <FormPartial item={this.data}/>
                     </div>
                 </div>
             </div>
@@ -25,4 +37,4 @@ class index extends React.Component {
     }
 }
 
-module.exports = index;
+module.exports = Create;

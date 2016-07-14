@@ -32,6 +32,39 @@
             "outDir": null,
             "localRoot": "${workspaceRoot}",
             "remoteRoot": null
+        },
+        {
+            "name": "Debug",
+            "type": "chrome",
+            "request": "launch",
+            "webRoot": "${workspaceRoot}/server.js",
+            "url": "http://localhost:7777",
+            "userDataDir": "${workspaceRoot}/.vscode/chrome",
+            "sourceMaps": true,
+            "preLaunchTask": "development"
+        },
+        {
+            "name": "launch as server",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/out/src/chromeDebug.js",
+            "runtimeArgs": ["--harmony"],
+            "stopOnEntry": false,
+            "args": [ "--server=4712" ],
+            "sourceMaps": true,
+            "outDir": "${workspaceRoot}/out"
+        },
+        {
+            "name": "test",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
+            "stopOnEntry": false,
+            "args": [ "test" ],
+            "sourceMaps": true,
+            "outDir": "${workspaceRoot}/out"
         }
     ]
 }
