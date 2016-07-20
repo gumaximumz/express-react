@@ -45,6 +45,7 @@
     "react-native-textinput-effects": "^0.1.1",
     "react-native-vector-icons": "^2.0.3",
     "react-router": "^2.4.1",
+    "react-toggle": "^2.1.1",
     "style-loader": "^0.13.1",
     "supertest": "^1.2.0",
     "webpack": "^1.13.1",
